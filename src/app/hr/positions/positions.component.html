@@ -1,0 +1,35 @@
+<a [routerLink]="['./addpositions']"><button type="button" class="btn btn-dark" style="float: right;">+ Add</button></a>
+<br>
+
+<router-outlet></router-outlet>
+<br>
+<table *ngIf="list"  datatable class="row-border hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Short</th>
+        <th scope="col">Level</th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let pos of list">
+        <th scope="row">{{pos.posid}}</th>
+        <td>{{pos.poscode}}</td>
+        <td>{{pos.posname}}</td>
+        <td>{{pos.posshort}}</td>
+        <td>{{pos.poslevel}}</td>
+        <td>{{pos.description}}</td>
+        <td><span [ngClass]="pos.status=='Active'?'badge badge-success':'badge badge-danger'">{{pos.status}}</span></td>
+        <td><a [routerLink]="['/slidebar/hr/positions/editpositions',pos.posid]"><button type="button" class="btn btn-outline-danger waves-effect" data-toggle="modal" data-target="#myModal"><i class="pi pi-user-edit"></i></button></a></td>
+        <td><button type="button" class="btn btn-outline-danger waves-effect" (click)="delete(pos.posid)"><i class="pi pi-trash"></i></button></td>
+
+
+      </tr>
+    </tbody>
+  </table>

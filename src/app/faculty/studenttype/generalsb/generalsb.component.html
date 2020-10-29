@@ -1,0 +1,53 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <section class="my-5">
+
+
+        <h2 class="h1-responsive font-weight-bold text-center my-5">Registration Form</h2>
+
+        <div class="row">
+
+
+            <div class="col-md-9 mb-md-0 mb-5">
+                
+              
+
+                    <div class="col-md-12">
+                        <br>
+                        <select class="browser-default custom-select mb-4" formControlName="bid">
+                            <option value="" disabled>Choose Batches</option>
+                            <option *ngFor="let gb of genbatch" value="{{gb.bid}}">{{gb.bn}} | {{gb.un}} | {{gb.bt}} | {{gb.st | date: 'mediumDate'}}</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <select class="browser-default custom-select mb-4" formControlName="sid">
+                            <option value="" disabled>Choose Student</option>
+                             <option *ngFor="let gs of genstudent" value="{{gs.sid}}">{{gs.fn}}</option>
+                        </select>
+                    </div>
+                
+
+                <div class="col-md-12">
+
+                    <select class="browser-default custom-select mb-4" formControlName="status">
+                        <option value="" disabled>Choose status</option>
+                        <option>Active</option>
+                        <option>Block</option>
+                    </select>
+
+                </div>
+
+                <div class="text-center text-md-left">
+                    <button type="submit" class="btn btn-outline-primary waves-effect"
+                        style="margin-top: 30px;width: 80px;">Send</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+</form>

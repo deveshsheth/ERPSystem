@@ -1,0 +1,29 @@
+<a [routerLink]="['./addonetoone']"><button type="button" class="btn btn-dark" style="margin-top: 30px;float: right;">+ Add</button></a>
+<router-outlet></router-outlet>
+<div class="table-responsive mt-1">
+    <table *ngIf="onetoonelist"  datatable class="row-border hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Batch ID</th>
+            <th scope="col">Student</th>
+            <th scope="col">Status</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let o of onetoonelist">
+            <th scope="row">{{o.bsid}}</th>
+            <td>{{o.bname}}</td>
+            <td>{{o.fn}}</td>
+            <td><span [ngClass]="o.status=='Active'?'badge badge-success':'badge badge-danger'">{{o.status}}</span></td>
+            <td><a [routerLink]="['/slidebar/students/managebatch/general/addgeneral',o.bsid]"><button type="button" class="btn btn-outline-danger waves-effect"><i class="pi pi-user-edit"></i></button></a></td>
+            <td><button type="button" class="btn btn-outline-danger waves-effect" (click)="delete(o.bsid)"><i class="pi pi-trash"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+

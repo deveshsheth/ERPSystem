@@ -1,0 +1,18 @@
+<a [routerLink]="['./studentsreg']"><button type="button" class="btn btn-dark" style="margin-top: 30px;width: 150px;">Register</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- <button type="button" class="btn btn-dark" style="margin-top: 30px;width: 200px;">Manage Batches</button></a> -->
+<div class="dropdown">
+    <a [routerLink]="['./managebatch']"><button type="button" class="btn btn-dark" style="margin-top: 30px;width: 160px;">Manage Batches</button></a>
+  <div class="dropdown-content">
+    <p><a [routerLink]="['./club']" style="color: black;font-size: 20px;font-weight: bold;padding-left: 40px;">Club</a></p>
+    <p><a [routerLink]="['./general']" style="color: black;font-size: 20px;font-weight: bold;padding-left: 30px;">General</a></p>
+    <p><a [routerLink]="['./onetoone']" style="color: black;font-size: 20px;font-weight: bold;padding-left: 15px;">One To One</a></p>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+
+

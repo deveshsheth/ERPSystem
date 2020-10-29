@@ -1,0 +1,137 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <section class="my-5">
+
+
+        <h2 class="h1-responsive font-weight-bold text-center my-5">Registration Form</h2>
+
+        <div class="row">
+
+
+            <div class="col-md-9 mb-md-0 mb-5">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Start Time</b></p>
+                            <input type="time" class="form-control" mdbInput
+                                formControlName="stime">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>End Time</b></p>
+                            <input type="time" class="form-control" mdbInput
+                                formControlName="etime">
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <br>
+                        <p><b>Monday</b></p>
+                        <select class="browser-default custom-select mb-4" formControlName="mon">
+                            <option value="" disabled>Choose Batches</option>
+                            <option *ngFor="let b of getbatchbyid" value="{{b.bid}}">{{b.bname}}</option>
+                           
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <p><b>Tuesday</b></p>
+                        <select class="browser-default custom-select mb-4" formControlName="tue">
+                            <option value="" disabled>Choose Batches</option>
+                            <option *ngFor="let b of getbatchbyid" value="{{b.bid}}">{{b.bname}}</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <br>
+                        <p><b>Wednesday</b></p>
+                        <select class="browser-default custom-select mb-4" formControlName="wed">
+                            <option value="" disabled>Choose Batches</option>
+                            <option *ngFor="let b of getbatchbyid" value="{{b.bid}}">{{b.bname}}</option>
+
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <p><b>Thrusday</b></p>
+                        <select class="browser-default custom-select mb-4" formControlName="thu">
+                            <option value="" disabled>Choose Batces</option>
+                            <option *ngFor="let b of getbatchbyid" value="{{b.bid}}">{{b.bname}}</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <br>
+                        <p><b>Friday</b></p>
+                        <select class="browser-default custom-select mb-4" formControlName="fri">
+                            <option value="" disabled>Choose Batches</option>
+                            <option *ngFor="let b of getbatchbyid" value="{{b.bid}}">{{b.bname}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <p><b>Saturday</b></p>
+                        <select class="browser-default custom-select mb-4" formControlName="sat">
+                            <option value="" disabled>Choose Batches</option>
+                            <option *ngFor="let b of getbatchbyid" value="{{b.bid}}">{{b.bname}}</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <br>
+                        <p><b>Sunday</b></p>
+                        <select class="browser-default custom-select mb-4" formControlName="sun">
+                            <option value="" disabled>Choose Batches</option>
+                            <option *ngFor="let b of getbatchbyid" value="{{b.bid}}">{{b.bname}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <p><b>Status</b></p>
+                        <select class="browser-default custom-select mb-4" formControlName="status">
+                            <option value="" disabled>Choose Status</option>
+                            <option>Active</option>
+                            <option>Block</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="text-center text-md-left">
+                    <button type="submit" class="btn btn-dark"
+                        style="margin-top: 30px;width: 80px;">Send</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+</form>

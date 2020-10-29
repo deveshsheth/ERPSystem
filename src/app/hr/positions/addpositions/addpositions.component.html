@@ -1,0 +1,95 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <section class="my-5">
+    
+       
+        <h2 class="h1-responsive font-weight-bold text-center my-5"><u>Position Form</u></h2>
+       
+        <div class="row">
+      
+     
+          <div class="col-md-9 mb-md-0 mb-5">
+      
+            
+      
+         
+              <div class="row">
+      
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <p><b>Code</b></p>
+                    <input type="text"  class="form-control" placeholder="Enter code" mdbInput formControlName="poscode">
+                  </div>
+                </div>
+       
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <p><b>Name</b></p>
+                    <input type="text"  class="form-control"  placeholder="Enter Name" mdbInput formControlName="posname">
+                
+                  </div>
+                </div>
+              
+      
+              </div>
+            
+              <div class="row">
+      
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <p><b>Short Name</b></p>
+                    <input type="text" class="form-control" placeholder="Enter Short Name" mdbInput formControlName="posshort">
+                   
+                  </div>
+                </div>
+       
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <br>
+                    <br>
+                    <select class="browser-default custom-select mb-4" formControlName="poslevel">
+                      <option value="" disabled>Choose Level</option>
+                      <option>First Level</option>
+                      <option>Second Level</option>
+                      <option>Third Level</option>
+                  </select>
+                  </div>
+                </div>
+              
+              </div>
+             <br><br>
+              <select class="browser-default custom-select mb-4" formControlName="status">
+                    <option value="" disabled>Choose status</option>
+                    <option>Active</option>
+                    <option>Block</option>
+                </select>
+    
+              <div class="row">
+      
+               
+                <div class="col-md-12">
+                  <div class="md-form">
+                    <p><b>Description</b></p>
+                    <textarea type="text"  class="form-control md-textarea" rows="3"
+                      mdbInput formControlName="description" placeholder="Enter description"></textarea>
+                  </div>
+                </div>
+                
+      
+              </div>
+              
+      
+           
+      
+            <div class="text-center text-md-left">
+                <button type="submit" class="btn btn-dark" style="margin-top: 30px;width: 80px;">Send</button>
+            </div>
+       
+          </div>
+    
+      
+        </div>
+    
+    
+      </section>
+    </form>
+      

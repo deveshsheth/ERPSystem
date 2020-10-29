@@ -1,0 +1,39 @@
+
+<a [routerLink]="['./adddepartments']"><button type="button" class="btn btn-dark" style="margin-top: 30px;float: right;">+ Add</button></a>
+<br>
+<br>
+<router-outlet></router-outlet>
+<br>
+<div class="table-responsive mt-1">
+<table *ngIf="deplist" datatable class="row-border hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Short</th>
+        <th scope="col">Level</th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let dep of deplist">
+        <th scope="row">{{dep.did}}</th>
+        <td>{{dep.deptcode}}</td>
+        <td>{{dep.deptname}}</td>
+        <td>{{dep.deptshort}}</td>
+        <td>{{dep.deptlevel}}</td>
+        <td>{{dep.positiondesc}}</td>
+        <td><span [ngClass]="dep.status=='Active'?'badge badge-success':'badge badge-danger'">{{dep.status}}</span></td>
+        <td><a [routerLink]="['/slidebar/hr/departments/adddepartments',dep.did]"><button type="button" class="btn btn-outline-danger waves-effect"><i class="pi pi-user-edit"></i></button></a></td>
+        <td><button type="button" class="btn btn-outline-danger waves-effect" (click)="delete(dep.did)"><i class="pi pi-trash"></i></button></td>
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,189 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <section class="my-5">
+
+        <h2 class="h1-responsive font-weight-bold text-center my-5"><u>Employee Form</u></h2>
+
+        <div class="row">
+
+            <div class="col-md-9 mb-md-0 mb-5">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Code</b></p>
+                            <input type="text" class="form-control" placeholder="Enter code" mdbInput
+                                formControlName="empcode">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Name</b></p>
+                            <input type="text" class="form-control" placeholder="Enter Name" mdbInput
+                                formControlName="ename">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <br>
+                        <select class="browser-default custom-select mb-4" formControlName="did">
+                            <option value="" disabled>Choose Department</option>
+                            <option *ngFor="let dep of deplist" value="{{dep.did}}">{{dep.deptname}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <select class="browser-default custom-select mb-4" formControlName="posid">
+                            <option value="" disabled>Choose position</option>
+                            <option *ngFor="let pos of poslist" value="{{pos.posid}}">{{pos.posname}}</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Date Of Joining</b></p>
+                            <input type="date" class="form-control" mdbInput formControlName="doj">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <P><b>Qualification</b></P>
+                            <input type="text" class="form-control" placeholder="Enter qualification" mdbInput
+                                formControlName="qualification">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Experience</b></p>
+                            <input type="text" class="form-control" placeholder="Enter Experience" mdbInput
+                                formControlName="experience">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Contact No.</b></p>
+                            <input type="text" class="form-control" placeholder="Enter Contact" mdbInput
+                                formControlName="contact">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+
+
+                <div class="row">
+
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Email-ID</b></p>
+                            <input type="email" class="form-control" placeholder="Enter Email-ID" mdbInput
+                                formControlName="email">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Date of Ending</b></p>
+                            <input type="date" class="form-control" placeholder="Enter EndDate" mdbInput
+                                formControlName="enddate">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Job Type</b></p>
+                            <input type="text" class="form-control" placeholder="Enter JobType" mdbInput
+                                formControlName="jobtype">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <br>
+                        <br>
+                        <select class="browser-default custom-select mb-4" formControlName="gender">
+                            <option value="" disabled>Choose Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <input mdInput type="file" id="file" (change)="handleFileInput($event.target.files)" class="form-control text-light" required>
+                        <div *ngIf="imagePath">
+                            <img [src]="['http://localhost:9100/uploads/' +imagePath]" width="80px" height="80px" required>
+                          </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        
+                        <select class="browser-default custom-select mb-4" formControlName="status">
+                            <option value="" disabled>Choose Status</option>
+                            <option value="Active">Active</option>
+                            <option value="Block">Block</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="text-center text-md-left">
+                    <button type="submit" class="btn btn-dark"
+                        style="margin-top: 30px;width: 80px;">Send</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+</form>

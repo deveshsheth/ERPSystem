@@ -1,0 +1,39 @@
+<div class="sidebar">
+  <ul>
+    <li>
+      <a [routerLink]="['./dashboard']" class="active"><b>Dashboard</b></a>
+    </li>
+
+    <li *ngIf="isloginadmin">
+      <a [routerLink]="['./admin']"><b>Admin</b></a>
+    </li>
+
+
+    <li *ngIf="isloginhr">
+      <a [routerLink]="['./hr']"><b>HR</b></a>
+    </li>
+
+    <li *ngIf="isloginfaculty">
+      <a [routerLink]="['./faculty']"><i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;<b>Faculty</b></a>
+    </li>
+
+    <li *ngIf="isloginstudent">
+      <a [routerLink]="['./students']"><i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;<b>Students</b></a>
+    </li>
+
+    <li>
+      <a (click)="logout()" class="log"><i class="fas fa-power-off"></i>&nbsp;&nbsp;&nbsp;<b>Logout</b></a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="content">
+  <div class="topnav">
+    <a class="active" [routerLink]="['/header']"><b>Royal ERP System</b></a>
+
+
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

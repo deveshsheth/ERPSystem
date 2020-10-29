@@ -1,0 +1,59 @@
+<!-- <a [routerLink]="['/slidebar/faculty/studenttype']"><button type="button" class="btn btn-dark" style="margin-top: 30px;float: right;">Mail</button></a>
+<router-outlet></router-outlet> -->
+
+
+
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal"
+  style="margin-top: 30px;float: right;">+ ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h4 class="modal-title"><b>Student Form</b></h4>
+        </div>
+        <div class="modal-body">
+          <select class="browser-default custom-select mb-4" formControlName="sid" (change)="getemail($event)">
+            <option value="" disabled>Choose Student</option>
+            <option *ngFor="let s of addstudent" value="{{s.sid}}">{{s.fn}}&nbsp;{{s.mn}}&nbsp;{{s.ln}}</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal"
+            data-target="#myModal">Close</button>
+            <button type="submit" value="submit" class="btn btn-dark" data-toggle="modal"
+            data-target="#myModal">Save</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
+<div class="table-responsive mt-1">
+  <table datatable class="row-border hover">
+    <thead>
+      <tr>
+        <th scope="col">Student Name</th>
+        <th scope="col">Student Code</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Email-ID</th>
+        <th scope="col">Batch Type</th>
+        <th scope="col">Added</th>
+        <th scope="col">Group Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let bs of batchstudent">
+        <th scope="row">{{bs.fn}}</th>
+        <td>{{bs.scode}}</td>
+        <td>{{bs.mobile}}</td>
+        <td>{{bs.email}}</td>
+        <td>{{bs.typeofstudent}}</td>
+        <td>{{bs.startdate | date:'mediumDate'}}</td>
+        <td><button type="button" class="btn btn-outline-danger waves-effect" (click)="sendemail(bs.bsid)"><i class="pi pi-envelope"></i></button></td>
+        <td><button type="button" class="btn btn-outline-danger waves-effect"><i class="pi pi-trash"></i></button></td>
+    </tbody>
+  </table>
+</div>

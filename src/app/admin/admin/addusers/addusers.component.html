@@ -1,0 +1,113 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <section class="my-5">
+
+
+        <h2 class="h1-responsive font-weight-bold text-center my-5">Admin Form</h2>
+
+        <div class="row">
+
+            <div class="col-md-9 mb-md-0 mb-5">
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>UserName</b></p>
+                            <input type="text" class="form-control" placeholder="Enter UserName" mdbInput
+                                formControlName="username">
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                
+                        <div class="md-form mb-0">
+                            <p><b>Password</b></p>
+                            <input pPassword type="text" class="form-control" placeholder="Enter Password" mdbInput
+                                formControlName="password">
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="row">
+
+
+                    <div class="col-md-6">
+                        <br>
+                        <br>
+                        <br>
+                        <select class="browser-default custom-select mb-4" formControlName="empid">
+                            <option value="" disabled>Choose employees</option>
+                            <option *ngFor="let emp of emplist" value="{{emp.empid}}">{{emp.ename}}</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Role</b></p>
+                            <input type="text" class="form-control" placeholder="Enter Role" mdbInput
+                                formControlName="role">
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Editiong</b></p>
+                            <input type="text" class="form-control" placeholder="Enter Editiong" mdbInput
+                                formControlName="editiong">
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <br>
+                        <br>
+                        <br>
+                        <select class="browser-default custom-select mb-4" formControlName="did">
+                            <option value="" disabled>Choose Department</option>
+                            <option *ngFor="let dep of deplist" value="{{dep.did}}">{{dep.deptname}}</option>
+                        </select>
+                       
+                    </div>
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-md-12">
+                        <br>
+                        <select class="browser-default custom-select mb-4" formControlName="status">
+                            <option value="" disabled>Choose Status</option>
+                            <option>Active</option>
+                            <option>Block</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="text-center text-md-left">
+                    <button type="submit" class="btn btn-dark"
+                        style="margin-top: 30px;width: 80px;">Send</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+</form>

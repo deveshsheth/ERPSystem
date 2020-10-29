@@ -1,0 +1,205 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <section class="my-5">
+
+        <h2 class="h1-responsive font-weight-bold text-center my-5">Registration Form</h2>
+
+        <div class="row">
+
+            <div class="col-md-9 mb-md-0 mb-5">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Code</b></p>
+                            <input type="text" class="form-control" placeholder="Enter code" mdbInput
+                                formControlName="scode">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>FirstName</b></p>
+                            <input type="text" class="form-control" placeholder="Enter FirstName" mdbInput
+                                formControlName="fn">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                           <p><b>MiddleName</b></p> 
+                            <input type="text" class="form-control" placeholder="Enter MiddleName" mdbInput
+                                formControlName="mn">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>LastName</b></p>
+                            <input type="text" class="form-control" placeholder="Enter LastName" mdbInput
+                                formControlName="ln">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    
+                    <div class="col-md-6">
+                        <br><br><br>
+                        <select class="browser-default custom-select mb-4" formControlName="gender">
+                            <option value="" disabled>Choose Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <p><b>Address</b></p>
+                          <textarea type="text"  class="form-control md-textarea" rows="3"
+                            mdbInput formControlName="address" placeholder="Enter Address"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Date Of Birth</b></p>
+                            <input type="date" class="form-control"  mdbInput
+                                formControlName="dob">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Date of Joining</b></p>
+                            <input type="date" class="form-control" mdbInput
+                                formControlName="doj">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Qualification</b></p>
+                            <input type="text" class="form-control" placeholder="Enter Qualification" mdbInput
+                                formControlName="qualification">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>College Name</b></p>
+                            <input type="text" class="form-control" placeholder="Enter collegename" mdbInput
+                                formControlName="collegename">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Reference</b></p>
+                            <input type="text" class="form-control" placeholder="Enter Reference" mdbInput
+                                formControlName="ref">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Mobile  No.</b></p>
+                            <input type="text" class="form-control" placeholder="Enter Mobile Number" mdbInput
+                                formControlName="mobile">
+                        </div>
+                    </div>
+
+                </div>
+              
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Email-ID</b></p>
+                            <input type="email" class="form-control" placeholder="Enter Email" mdbInput
+                                formControlName="email">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <p><b>Inquery Detail</b></p>
+                            <input type="text" class="form-control" placeholder="Enter InqueryDetail" mdbInput
+                                formControlName="inqdetail">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                                <select class="browser-default custom-select mb-4" formControlName="typeofstudent">
+                                    <option value="" disabled>Batch Type</option>
+                                    <option>General</option>
+                                    <option>Club</option>
+                                    <option>OneToOne</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <select class="browser-default custom-select mb-4" formControlName="status">
+                            <option value="" disabled>Choose Status</option>
+                            <option>Active</option>
+                            <option>Block</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="file" id="file" (change)="handleFileInput($event.target.files)" required>
+                        </div>
+                        <div *ngIf="imagePath">
+                            <img [src]="['http://localhost:9100/uploads/' +imagePath]" width="80px" height="80px" required>
+                          </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center text-md-left">
+                    <button type="submit" class="btn btn-dark"
+                        style="margin-top: 30px;width: 80px;">Send</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+</form>
+

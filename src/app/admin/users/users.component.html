@@ -1,0 +1,31 @@
+<!-- <a [routerLink]="['./addusers']"><button type="button" class="btn btn-dark" style="margin-top: 30px;float: right;">+ Add</button></a>
+<router-outlet></router-outlet>
+
+    <div class="table-responsive mt-1">
+      <table *ngIf="userlist"  datatable class="row-border hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Role</th>
+            <th scope="col">Editiong</th>
+            <th scope="col">Status</th>
+            <th scope="col">Departments</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let u of userlist">
+              <th scope="row">{{u.uid}}</th>
+              <td>{{u.username}}</td>
+              <td>{{u.role}}</td>
+              <td>{{u.editiong}}</td>
+              <td><span [ngClass]="u.status=='Active'?'badge badge-success':'badge badge-danger'">{{u.status}}</span></td>
+              <td>{{u.did}}</td>
+              <td><a [routerLink]="['/slidebar/admin/users/addusers',u.uid]"><button type="button" class="btn btn-info btn-rounded">Edit</button></a></td>
+              <td><button type="button" class="btn btn-danger btn-rounded" (click)="delete(u.uid)">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->

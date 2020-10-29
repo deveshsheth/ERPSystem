@@ -1,0 +1,33 @@
+<a [routerLink]="['./addusers']"><button type="button" class="btn btn-dark" style="margin-top: 30px;float: right;">+ Add</button></a>
+<br>
+<br>
+<router-outlet></router-outlet>
+<br>
+    <div class="table-responsive mt-1">
+      <table *ngIf="userlist"  datatable class="row-border hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Role</th>
+            <th scope="col">Editiong</th>
+            <th scope="col">Status</th>
+            <th scope="col">Departments</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let u of userlist">
+              <th scope="row">{{u.uid}}</th>
+              <td>{{u.username}}</td>
+              <td>{{u.role}}</td>
+              <td>{{u.editiong}}</td>
+              <td><span [ngClass]="u.status=='Active'?'badge badge-success':'badge badge-danger'">{{u.status}}</span></td>
+              <td>{{u.did}}</td>
+              <td><a [routerLink]="['/slidebar/admin/addusers',u.uid]"><button type="button" class="btn btn-outline-danger waves-effect"><i class="pi pi-user-edit"></i></button></a></td>
+              <td><button type="button" class="btn btn-outline-danger waves-effect" (click)="delete(u.uid)"><i class="pi pi-trash"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

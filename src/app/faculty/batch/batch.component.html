@@ -1,0 +1,42 @@
+<a [routerLink]="['./addbatch']"><button type="button" class="btn btn-dark" style="margin-top: 30px;float: right;">+ Add</button></a>
+<router-outlet></router-outlet>
+<br>
+<br>
+<!-- <div id="myProgress" [value]="value1" *ngIf="value1!=100">
+  <div id="myBar">10%</div>
+</div> -->
+<!-- <div style="margin-left: 45%;margin-top: 15%;"> -->
+<!-- <p-progressSpinner *ngIf="value1!=100"></p-progressSpinner> </div> -->
+<!-- <p-progressBar  [value]="value1" mode="indeterminate" *ngIf="value1!=100" [style]="{'height': '5px'}" ></p-progressBar> -->
+
+<!-- <p-progressBar [value]="value1" *ngIf="value1!=100"></p-progressBar> -->
+
+
+<div class="container col-lg-12 p-3 m-2">
+  <div class="row" >
+      <div class=" col-lg-3 m-3 " *ngFor="let b of getBatchUserId">
+       
+          <div class="card" style="background-color: rgb(199, 217, 223);">
+
+            
+            <p style="font-weight: 800;font-size: 30px;text-align: center;color: black">{{b.bname}}</p>
+            <p style="font-weight: 800;font-size: 30px;text-align: center;color: crimson">{{b.btype}}</p>
+            <hr>
+            <p style="font-weight: 800;font-size: 20px;text-align: center;">Batch Code:- {{b.bcode}}</p>
+            <p style="font-weight: 500;font-size: 16px;text-align: center;">{{b.startdate | date: 'mediumDate'}}</p>
+            <p style="font-weight: 500;font-size: 16px;text-align: center;">{{b.starttime}}</p>
+        
+              <div class="card-body" style="padding-left: 45px;">
+    
+                <a [routerLink]="['../batchstudent',b.bid]"><button class="btn btn-dark"><i class="pi pi-users"></i></button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a [routerLink]="['/slidebar/faculty/batch/addbatch',b.bid]"><button class="btn btn-dark"><i class="pi pi-user-edit"></i></button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-dark" (click)="delete(b.bid)"><i class="pi pi-trash"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              </div>
+
+          </div>
+        
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

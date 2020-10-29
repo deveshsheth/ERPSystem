@@ -1,0 +1,31 @@
+<a [routerLink]="['./addcourses']"><button type="button" class="btn btn-dark" style="margin-top: 30px;float: right;">+ Add</button></a>
+<br>
+<br>
+<router-outlet></router-outlet>
+<br>
+
+<div class="table-responsive mt-1">
+<table *ngIf="courselist"  datatable class="row-border hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let c of courselist">
+        <th scope="row">{{c.cid}}</th>
+        <td>{{c.ccode}}</td>
+        <td>{{c.cname}}</td>
+        <td><span [ngClass]="c.status=='Active'?'badge badge-success':'badge badge-danger'">{{c.status}}</span></td>
+        <td><a [routerLink]="['/slidebar/hr/courses/addcourses',c.cid]"><button type="button" class="btn btn-outline-danger waves-effectd"><i class="pi pi-user-edit"></i></button></a></td>
+        <td><button type="button" class="btn btn-outline-danger waves-effect" (click)="delete(c.cid)"><i class="pi pi-trash"></i></button></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
