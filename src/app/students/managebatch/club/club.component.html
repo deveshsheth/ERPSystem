@@ -19,7 +19,7 @@
             <td>{{c.fn}}</td>
             <td><span [ngClass]="c.status=='Active'?'badge badge-success':'badge badge-danger'">{{c.status}}</span></td>
             <td><a [routerLink]="['/slidebar/students/managebatch/general/addgeneral',c.bsid]"><button type="button" class="btn btn-outline-danger waves-effect"><i class="pi pi-user-edit"></i></button></a></td>
-            <td><button type="button" class="btn btn-outline-danger waves-effect" (click)="delete(c.bsid)"><i class="pi pi-trash"></i></button></td>
+            <td><button type="button" class="btn btn-outline-danger waves-effect"><i class="pi pi-trash"></i></button></td>
           </tr>
         </tbody>
       </table>

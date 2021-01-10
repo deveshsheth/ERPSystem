@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  Base_URL:"localhost:9595"
+  // Base_URL:"localhost:9595"
+  Base_URL:"https://erpsystemdb.herokuapp.com/"
 };
 
 /*
